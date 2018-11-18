@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+  <h2>
+  <%
+    type = details.type;
+    weight = details.weight;
+
+    function calculateRate() {
+      if (type === "Letters (stamped)") {
+        if (weight < 1)
+          return .5;
+        else if (weight < 2)
+          return .71;
+        else if (weight < 3)
+          return .92;
+        else if (weight < 3.5)
+          return 1.13;
+      } else if (type === "Letters (Metered)") {
+        if (weight < 1)
+          return .47;
+        else if (weight < 2)
+          return .68;
+        else if (weight < 3)
+          return .89;
+        else if (weight < 3.5)
+          return 1.10;
+      } else if (type === "Large Envelopes (Flats)") {
+        if (weight < 1)
+          return 1.00;
+        else if (weight < 2)
+          return 1.21;
+        else if (weight < 3)
+          return 1.42;
+        else if (weight < 4)
+          return 1.63;
+        else if (weight < 5)
+          return 1.84;
+        else if (weight < 6)
+          return 2.05;
+        else if (weight < 7)
+          return 2.26;
+        else if (weight < 8)
+          return 2.47;
+        else if (weight < 9)
+          return 2.68;
+        else if (weight < 10)
+          return 2.89;
+        else if (weight < 11)
+          return 3.10;
+        else if (weight < 12)
+          return 3.31;
+        else if (weight < 13)
+          return 3.52;
+      } else if (type === "First-Class Package Service—Retail") {
+        if (weight < 1)
+          return 3.50;
+        else if (weight < 2)
+          return 3.50;
+        else if (weight < 3)
+          return 3.50;
+        else if (weight < 4)
+          return 3.50;
+        else if (weight < 5)
+          return 3.75;
+        else if (weight < 6)
+          return 3.75;
+        else if (weight < 7)
+          return 3.75;
+        else if (weight < 8)
+          return 3.75;
+        else if (weight < 9)
+          return 4.10;
+        else if (weight < 10)
+          return 4.45;
+        else if (weight < 11)
+          return 4.80;
+        else if (weight < 12)
+          return 5.15;
+        else if (weight < 13)
+          return 5.50;
+      }
+    }
+  %>
+  <%- "Your rate for a "+type+" weighing "+weight+"oz. is $"+calculateRate() %>
+  </h2>
+  <p>More information on the rates can be found <a href="https://pe.usps.com/text/dmm300/Notice123.htm#_c037">here</a>.</p>
+</body>
+</html>
