@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body class="index">
+
+  <% include ../partials/nav.ejs %>
+
+  <div class="home">
+    <!-- <h2>All Categories</h2> -->
+
+   <!-- <h2>All Categories</h2> -->
+    <ul class="version2">
+      <% Object.keys(genres).forEach(function(item) { %>
+      <li>
+        <a href=<%- "\'/genres/" + item + "\'"%>>
+          <p><%- genres[item] %></p>
+        </a>
+      </li>
+      <% }); %>
+    </ul>
+    <!-- <ul>
+      <li>
+        <a href="/categories/animation">
+          <img src="https://i.vimeocdn.com/video/742940051_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_animation"></span>
+              <p class="title">Animation</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/art">
+          <img src="https://i.vimeocdn.com/video/688268528_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_art"></span>
+              <p class="title">Arts & Design</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/cameratechniques">
+          <img src="https://i.vimeocdn.com/video/611384407_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_cameratechniques"></span>
+              <p class="title">Cameras & Techniques</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/comedy">
+          <img src="https://i.vimeocdn.com/video/546070784_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_comedy"></span>
+              <p class="title">Comedy</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/documentary">
+          <img src="https://i.vimeocdn.com/video/740721339_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_documentary"></span>
+              <p class="title">Documentary</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/experimental">
+          <img src="https://i.vimeocdn.com/video/742846414_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_experimental"></span>
+              <p class="title">Experimental</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/fashion">
+          <img src="https://i.vimeocdn.com/video/735198011_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_fashion"></span>
+              <p class="title">Fashion</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/food">
+          <img src="https://i.vimeocdn.com/video/578791142_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_food"></span>
+              <p class="title">Food</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/instructionals">
+          <img src="https://i.vimeocdn.com/video/680161870_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_instructionals"></span>
+              <p class="title">Instructionals</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/music">
+          <img src="https://i.vimeocdn.com/video/577336670_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_music"></span>
+              <p class="title">Music</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/narrative">
+          <img src="https://i.vimeocdn.com/video/733121442_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_narrative"></span>
+              <p class="title">Narrative</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/personal">
+          <img src="https://i.vimeocdn.com/video/572931372_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_personal"></span>
+              <p class="title">Personal</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/journalism">
+          <img src="https://i.vimeocdn.com/video/611264498_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_journalism"></span>
+              <p class="title">Reporting & Journalism</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/sports">
+          <img src="https://i.vimeocdn.com/video/678723239_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_sports"></span>
+              <p class="title">Sports</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/talks">
+          <img src="https://i.vimeocdn.com/video/598442902_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_talks"></span>
+              <p class="title">Talks</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/travel">
+          <img src="https://i.vimeocdn.com/video/554125740_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_travel"></span>
+              <p class="title">Travel</p>
+          </div>
+        </a>
+      </li>
+    </ul> -->
+  </div>
+  <h2 class="selected">All Genres</h2>
+</body>
+</html>
+
+  <!-- <div class="categories">
+    <h2>All Categories</h2>
+    <ul>
+      <li>
+        <a href="/categories/animation">
+          <img src="https://i.vimeocdn.com/video/742940051_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_animation"></span>
+              <p class="title">Animation</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/art">
+          <img src="https://i.vimeocdn.com/video/688268528_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_art"></span>
+              <p class="title">Arts & Design</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/cameratechniques">
+          <img src="https://i.vimeocdn.com/video/611384407_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_cameratechniques"></span>
+              <p class="title">Cameras & Techniques</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/comedy">
+          <img src="https://i.vimeocdn.com/video/546070784_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_comedy"></span>
+              <p class="title">Comedy</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/documentary">
+          <img src="https://i.vimeocdn.com/video/740721339_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_documentary"></span>
+              <p class="title">Documentary</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/experimental">
+          <img src="https://i.vimeocdn.com/video/742846414_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_experimental"></span>
+              <p class="title">Experimental</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/fashion">
+          <img src="https://i.vimeocdn.com/video/735198011_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_fashion"></span>
+              <p class="title">Fashion</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/food">
+          <img src="https://i.vimeocdn.com/video/578791142_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_food"></span>
+              <p class="title">Food</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/instructionals">
+          <img src="https://i.vimeocdn.com/video/680161870_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_instructionals"></span>
+              <p class="title">Instructionals</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/music">
+          <img src="https://i.vimeocdn.com/video/577336670_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_music"></span>
+              <p class="title">Music</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/narrative">
+          <img src="https://i.vimeocdn.com/video/733121442_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_narrative"></span>
+              <p class="title">Narrative</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/personal">
+          <img src="https://i.vimeocdn.com/video/572931372_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_personal"></span>
+              <p class="title">Personal</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/journalism">
+          <img src="https://i.vimeocdn.com/video/611264498_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_journalism"></span>
+              <p class="title">Reporting & Journalism</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/sports">
+          <img src="https://i.vimeocdn.com/video/678723239_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_sports"></span>
+              <p class="title">Sports</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/talks">
+          <img src="https://i.vimeocdn.com/video/598442902_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_talks"></span>
+              <p class="title">Talks</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/categories/travel">
+          <img src="https://i.vimeocdn.com/video/554125740_590x332.webp">
+          <div class="item_desc">
+              <span class="category_sprite category_sprite_travel"></span>
+              <p class="title">Travel</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div> -->
