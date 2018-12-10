@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const axios = require('axios')
-// const routes = require('./routes/index');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000;
 var app = express();
@@ -62,7 +61,6 @@ app
     .catch(error => {
       res.send("fail" + error)
     })})
-  .post('/getRate', (req, res) => res.render('pages/getRate', {details:req.body,}))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
@@ -77,4 +75,4 @@ app
    // req.body object has your form values
    // console.log(req.body.clubname);
    // console.log(req.body.clubtype);
-   // )
+  // .post('/getRate', (req, res) => res.render('pages/getRate', {details:req.body,}))
