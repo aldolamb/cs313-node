@@ -57,7 +57,7 @@ app
           // Reducing the description to 40 words
           item.description = item.description.split(" ").splice(0,40).join(" ") + "...";
       });
-      res.render('project2/genres', {data: data, selected: genres[req.params.id]})
+      res.render('project2/genres', {data: data, selected: req.params.id})
     })
     .catch(error => {
       res.send("fail" + error)
