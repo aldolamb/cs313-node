@@ -3,10 +3,9 @@ const path = require('path');
 const axios = require('axios')
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000;
-var app = express();
+const app = express();
 
-
-var session = require('express-session')
+const session = require('express-session')
 
 app.use(session({
   secret: 'vimeo-secret',
@@ -19,12 +18,11 @@ app.set('view engine', 'ejs');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false});
 
-app.use(express.json() );       // to support JSON-encoded bodies
-app.use(express.urlencoded({ extended: false })); // to support URL-encoded bodies
+app.use(express.json() );
+app.use(express.urlencoded({ extended: false }));
 
 app.set('port', (process.env.PORT || 5000));
 
-// We have html and js in the public directory that need to be accessed
 app.use(express.static(path.join(__dirname, 'public')))
 
 
@@ -67,10 +65,8 @@ app.get('/login', (req, res) => {
   res.render('project2/login')
 });
 
-// Setup our routes
 app.post('/login', handleLogin);
 app.get('/logout', handleLogout)
-// app.post('/logout', handleLogout);
 
 function getGenres() {
   try {
@@ -88,45 +84,41 @@ function getGenre(genre) {
   }
 }
 
-function handleLogin(request, response) {
+function handleLogin(req, res) {
   var result = {success: false};
 
   // We should do better error checking here to make sure the parameters are present
-  if (request.body.username == "admin" && request.body.password == "cs313") {
-    request.session.user = request.body.username;
+  if (req.body.username == "admin" && req.body.password == "cs313") {
+    req.session.user = req.body.username;
     result = {success: true};
   }
 
-  response.json(result);
+  res.json(result);
 }
 
-function handleLogout(request, response) {
+function handleLogout(req, res) {
   var result = {success: false};
 
-  // We should do better error checking here to make sure the parameters are present
-  if (request.session.user) {
-    request.session.destroy();
+  if (req.session.user) {
+    req.session.destroy();
     result = {success: true};
   }
 
-  // response.json(result);
-  response.redirect('/')
+  res.redirect('/')
 }
 
-function verifyLogin(request, response, next) {
-  if (request.session.user) {
+function verifyLogin(req, res, next) {
+  if (req.session.user) {
     // logged in
     next();
   } else {
     // not logged in
-    response.render('project2/login')
+    res.render('project2/login')
   }
 }
 
-// This middleware function simply logs the current request to the server
-function logRequest(request, response, next) {
-  console.log("Received a request for: " + request.url);
+function logRequest(req, res, next) {
+  console.log("Received a request for: " + req.url);
 
-  // don't forget to call next() to allow the next parts of the pipeline to function
   next();
 }
