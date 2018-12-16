@@ -87,7 +87,6 @@ function getGenre(genre) {
 function handleLogin(req, res) {
   var result = {success: false};
 
-  // We should do better error checking here to make sure the parameters are present
   if (req.body.username == "admin" && req.body.password == "cs313") {
     req.session.user = req.body.username;
     result = {success: true};
@@ -97,11 +96,8 @@ function handleLogin(req, res) {
 }
 
 function handleLogout(req, res) {
-  var result = {success: false};
-
   if (req.session.user) {
     req.session.destroy();
-    result = {success: true};
   }
 
   res.redirect('/')
