@@ -495,6 +495,28 @@ svg {
   background: #23272b;
 }
 
+.login {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+}
+.login * {
+  font-family: inherit;
+  font-weight: normal;
+}
+.login form {
+  width: inherit;
+  margin: auto;
+}
+.login form .form-group label {
+  color: white;
+}
+
 @media all and (max-width: 685px) {
   .layout * {
     -webkit-box-orient: vertical;
