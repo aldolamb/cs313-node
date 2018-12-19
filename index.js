@@ -92,7 +92,6 @@ function handleLogin(req, res) {
     result = {success: true};
   }
 
-  // res.json(result);
   res.redirect('back');
 }
 
