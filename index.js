@@ -92,7 +92,8 @@ function handleLogin(req, res) {
     result = {success: true};
   }
 
-  res.json(result);
+  // res.json(result);
+  res.redirect('back');
 }
 
 function handleLogout(req, res) {
